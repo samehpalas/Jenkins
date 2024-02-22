@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         NEW_VERSION = "1.3.0"
-        CREDENTIALS= credentials ('abcd')
+        CREDENTIALS = credentials ('abcd')
     }
     stages {
         stage('build') {
@@ -21,7 +21,6 @@ pipeline {
         
         stage('deploy') {
             steps {
-                echo "cred ysta is here ${abcd} "
                 echo 'Deploying the Application... '
             }
         }
