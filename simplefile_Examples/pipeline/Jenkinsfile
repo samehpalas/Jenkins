@@ -21,7 +21,7 @@ pipeline {
         
         stage('deploy') {
             steps {
-                echo 'cred ysta is here ${sameh-dockerhub-cred}'
+                echo "cred ysta is here ${sameh-dockerhub-cred}"
                 echo 'Deploying the Application... '
             }
         }
