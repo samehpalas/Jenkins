@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         NEW_VERSION = "1.3.0"
+        CREDENTIALS= credentials ('abcd')
     }
     stages {
         stage('build') {
@@ -14,11 +15,13 @@ pipeline {
         stage('test') {
             steps {
                 echo 'TeStInG the Application... '
+                echo "cred ysta is here ${CREDENTIALS}"
             }
         }
         
         stage('deploy') {
             steps {
+                echo "cred ysta is here ${KOKO}"
                 echo 'Deploying the Application... '
             }
         }
