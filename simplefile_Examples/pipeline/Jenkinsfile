@@ -15,7 +15,7 @@ pipeline {
         stage('test') {
             steps {
                 echo 'TeStInG the Application... '
-                echo "cred ysta is here ${abcd} "
+
             }
         }
         
