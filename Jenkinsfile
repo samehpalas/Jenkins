@@ -1,9 +1,5 @@
 pipeline {
     agent none
-    environment {
-        NEW_VERSION = "1.3.0"
-        CREDENTIALS = credentials ('abcd')
-    }
     stages {
         stage('test') {
             steps {
@@ -20,7 +16,6 @@ pipeline {
             }  
             steps {
                 echo 'building the Application... '
-                echo "version is ${NEW_VERSION}"
             }
         }
         
