@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    tools {
+        maven 'Maven'
+    }
+    stages {
+     // stage('buildJAR') {
+     //     steps {
+     //        echo 'building the Application... '
+     //        sh 'mvn package'
+    //     }
+    //  }
+        
+        stage('buildIMG') {
+            steps {
+                echo 'Building the docker image... '
+                withCredentials([usernamePassword(credentialsId: 'sameh-dockerhub-cred', usernameVariable: 'USER', passwordVariable: 'PASS')])
+                 {
+                   sh ' docker build -t samehpalas/demo-app:py-1.0 simplefile_Examples/com-pipeline/ '
+                   sh ' echo $PASS | docker login -u $USER --password-stdin '
+                   sh ' docker push samehpalas/demo-app:py-1.0 '
+            }
+        }
+        
+        stage('deploy') {
+            steps {
+                echo 'Deploying the Application... '
+            }
+        }
+        
+    }
+}
