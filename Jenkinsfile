@@ -19,23 +19,18 @@ pipeline {
             }
         }
         stage('build') {
-            when {
-              expression {
-                $BRANCH_NAME == 'main' 
-              }
-            }  
+            //when {
+              //expression {
+                //$BRANCH_NAME == 'main' 
+              //}
+            //}  
             steps {
                 script {
                      buildIMG()  //call this function from sharedLibrary and pass this parameter
             }
         }  
      }
-        stage('deploy') {
-            when {
-              expression {
-                $BRANCH_NAME == 'main' 
-              }
-            }  
+        stage('deploy') { 
             steps {
                 script {
                          gv.deployAPP()
