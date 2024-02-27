@@ -33,9 +33,9 @@ pipeline {
             //}  
             steps {
                 script {
-                     buildIMG 'samehpalas/demo-app:py-1.7'  //call this function from sharedLibrary and pass this parameter
+                     buildIMG 'samehpalas/demo-app:py-1.8'  //call this function from sharedLibrary and pass this parameter
                      dockerLogin()
-                     dockerpush 'samehpalas/demo-app:py-1.7'
+                     dockerpush 'samehpalas/demo-app:py-1.8'
                      
             }
         }  
