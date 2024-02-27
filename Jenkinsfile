@@ -1,3 +1,4 @@
+@library ('jenkins-shared-library')
 def gv
 pipeline {
     agent none
@@ -22,7 +23,7 @@ pipeline {
             }  
             steps {
                 script {
-                     buildIMG()  //call this function from sharedLibrary
+                     buildIMG 'samehpalas/demo-app:py-1.2'  //call this function from sharedLibrary and pass this parameter
             }
         }  
      }
