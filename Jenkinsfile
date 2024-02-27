@@ -14,7 +14,7 @@ pipeline {
         stage('test') {
             steps {
                 script {
-                    gv.testAPP 'samehpalas/demo-app:py-1.3'   //call this function from from groovyscript
+                    gv.testAPP'samehpalas/demo-app:py-1.3'   //call this function from from groovyscript
                 }
             }
         }
