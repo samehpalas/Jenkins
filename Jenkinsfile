@@ -1,7 +1,7 @@
 @Library ('jenkins-shared-library')
 def gv
 pipeline {
-    agent none
+    agent any
     stages {
         stage('init') {
             steps {
