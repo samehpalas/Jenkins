@@ -14,7 +14,7 @@ pipeline {
         stage('test') {
             steps {
                 script {
-                    gv.testAPP'samehpalas/demo-app:py-1.3'   //call this function from from groovyscript
+                    gv.testAPP()   //call this function from from groovyscript
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             //}  
             steps {
                 script {
-                     buildIMG()  //call this function from sharedLibrary and pass this parameter
+                     buildIMG'samehpalas/demo-app:py-1.3'  //call this function from sharedLibrary and pass this parameter
             }
         }  
      }
