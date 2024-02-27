@@ -1,11 +1,17 @@
+def gv
 pipeline {
     agent none
     stages {
+        stage('init') {
+            steps {
+              gv = load (script.groovy)
+            }
+        }
         stage('test') {
             steps {
-                echo 'Testing the Application... '
-                echo "version is $BRANCH_NAME"
-                
+                script {
+                    gv.testAPP()   //call this function from from groovyscript
+                }
             }
         }
         stage('build') {
@@ -15,10 +21,11 @@ pipeline {
               }
             }  
             steps {
-                echo 'building the Application... '
+                script {
+                     buildIMG()  //call this function from sharedLibrary
             }
-        }
-        
+        }  
+     }
         stage('deploy') {
             when {
               expression {
@@ -26,9 +33,10 @@ pipeline {
               }
             }  
             steps {
-                echo 'Deploying the Application... '
+                script {
+                         gv.deployAPP()
             }
+         }
         }
-        
     }
 }
