@@ -26,7 +26,7 @@ pipeline {
             //}  
             steps {
                 script {
-                     buildIMG 'samehpalas/demo-app:py-1.4'  //call this function from sharedLibrary and pass this parameter
+                     buildIMG 'samehpalas/demo-app:py-1.5'  //call this function from sharedLibrary and pass this parameter
             }
         }  
      }
