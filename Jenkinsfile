@@ -28,7 +28,7 @@ pipeline {
                 script {
                      buildIMG 'samehpalas/demo-app:py-1.7'  //call this function from sharedLibrary and pass this parameter
                      dockerLogin()
-                     Docker.dockerpush 'samehpalas/demo-app:py-1.7'
+                     dockerpush 'samehpalas/demo-app:py-1.7'
                      
             }
         }  
