@@ -6,7 +6,7 @@ library identifier: 'jenkins-shared-library@main' ,  //scoped shared library to 
          credentialsId: 'sameh-github-cred'
          ]
         )
-//@Library ('jenkins-shared-library')  // global SL , point on from jenkins global pipeline libraries
+//@Library ('jenkins-shared-library')   // global SL , point on from jenkins global pipeline libraries
 def gv
 pipeline {
     agent any
