@@ -1,5 +1,5 @@
 #! /usr/bin/env groovy
-library identifier: 'jenkins-shared-library@main' ,   //scoped shared library to extend the pipeline for this project
+library identifier: 'jenkins-shared-library@main' ,  //scoped shared library to extend the pipeline for this project
     retriever: modernSCM(
         [$class: 'GitSCMSource',
          remote: 'https://github.com/samehpalas/jenkins-shared-library.git' ,
