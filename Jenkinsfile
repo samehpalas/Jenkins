@@ -5,7 +5,7 @@ library identifier: 'jenkins-shared-library@main' ,  //scoped shared library to 
          remote: 'https://github.com/samehpalas/jenkins-shared-library.git' ,
          credentialsId: 'sameh-github-cred'
        ] 
-    )  
+    ) 
 //@Library ('jenkins-shared-library')    // global SL , point on from jenkins global pipeline libraries
 def gv
 pipeline {
