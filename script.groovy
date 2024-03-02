@@ -4,7 +4,7 @@ def testAPP() {
                  {
                     
                     echo " $PWD "
-                    
+                  
                 }
 }
 def deployAPP() {
