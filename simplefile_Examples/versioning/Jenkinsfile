@@ -10,7 +10,7 @@ pipeline {
              def reponame = "samehpalas/demo-app"
              def version = "0"
              def tag= "$version-$BUILD_NUMBER"
-             env.imagename = "$reponame+$tag"
+             env.imagename = "$reponame:$tag"
           }
          }
     }
