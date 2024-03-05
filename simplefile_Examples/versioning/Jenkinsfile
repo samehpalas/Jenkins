@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    parameters {string(name: 'reponame', defaultValue: '', description: '') }
     tools {
         maven 'Maven'
     }
@@ -7,7 +8,7 @@ pipeline {
         stage ('incremental version') {
          steps {
              script{
-             def reponame = "samehpalas/demo-app"
+            // def reponame = "samehpalas/demo-app"
              def version = "0"
              def tag= "$version-$BUILD_NUMBER"
              env.imagename = "$reponame:$tag"
