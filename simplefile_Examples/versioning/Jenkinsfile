@@ -7,9 +7,9 @@ pipeline {
         stage ('incremental version') {
          steps {
              def reponame = "samehpalas/demo-app"
-             def version = 0
-             def tag= $version-$BUILD_NUMBER
-             env.imagename = $reponame+$tag
+             def version = "0"
+             def tag= "$version-$BUILD_NUMBER"
+             env.imagename = "$reponame+$tag"
          }
     }
      // stage('buildJAR') {
