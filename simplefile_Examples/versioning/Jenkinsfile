@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage ('incremental version') {
          steps {
+             def imageName = "me-jeddah-1.ocir.io/ax7jtasczjmz/tamawal-platform"
              def reponame = "samehpalas/demo-app"
              def version = "0"
              def tag= "$version-$BUILD_NUMBER"
