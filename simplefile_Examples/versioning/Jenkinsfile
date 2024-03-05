@@ -39,6 +39,18 @@ pipeline {
                 echo 'Deploying the Application... '
             }
         }
-        
+        stage ('modify and push') {
+            steps {
+              script {
+               withCredentials([usernamePassword(credentialsId: 'sameh-gihub-cred', usernameVariable: 'USER', passwordVariable: 'PASS')])  //credentials
+               sh 'git remote set-url origin https://${USER}:${PASS}@github.com/samehpalas/Jenkins.git'  //pushing to remote repo
+               sh 'git config user.name "jenkins"'  // Set the Git user information that will push
+               sh 'git config user.email "jenkins@example.com"'
+               sh 'git add .'
+               sh 'git commit -m 'ci: version commit bump '
+               sh 'git push origin HEAD:main'
+              } 
+            }
+        }
     }
 }
