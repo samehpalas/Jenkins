@@ -4,6 +4,14 @@ pipeline {
         maven 'Maven'
     }
     stages {
+        stage ('incremental version') {
+         steps {
+             def reponame = "samehpalas/demo-app"
+             def version = 0
+             def tag= $version-$BUILD_NUMBER
+             env.imagename = $reponame+$tag
+         }
+    }
      // stage('buildJAR') {
      //     steps {
      //        echo 'building the Application... '
@@ -16,9 +24,9 @@ pipeline {
                 echo 'Building the docker image... '
                 withCredentials([usernamePassword(credentialsId: 'sameh-dockerhub-cred', usernameVariable: 'USER', passwordVariable: 'PASS')])
                  {
-                   sh ' docker build -t samehpalas/demo-app:py-1.1 simplefile_Examples/com-pipeline/ '
+                   sh ' docker build -t $imagename simplefile_Examples/versioning/ '
                    sh ' echo $PASS | docker login -u $USER --password-stdin '
-                   sh ' docker push samehpalas/demo-app:py-1.1 '
+                   sh ' docker push $imagename '
             }
             }
         }
