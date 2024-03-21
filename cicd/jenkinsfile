@@ -27,7 +27,7 @@ pipeline {
                 echo 'Building the docker image... '
                 withCredentials([usernamePassword(credentialsId: 'sameh-dockerhub-cred', usernameVariable: 'USER', passwordVariable: 'PASS')])
                  {
-                   sh " docker build -t $imagename simplefile_Examples/versioning/ "  //where docker_file located
+                   sh " docker build -t $imagename cicd/ "  //where docker_file located
                    sh " echo $PASS | docker login -u $USER --password-stdin "
                    sh " docker push $imagename "
             }
