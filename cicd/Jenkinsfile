@@ -51,7 +51,7 @@ pipeline {
                sh 'git config user.name "jenkins"'  // Set the Git user information that will push
                sh 'git config user.email "jenkins@example.com"'
                sh 'git add .'
-               sh 'git commit -m 'ci : version commit bump ''
+               sh 'git commit -m "ci : version commit bump "'
                sh 'git push origin HEAD:main'
               } 
             }
