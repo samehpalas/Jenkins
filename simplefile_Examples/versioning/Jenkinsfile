@@ -41,7 +41,7 @@ pipeline {
         }
         stage ('modify and push') {
             steps {
-              script {
+              script {  //to increase versionng on github, not just local
                withCredentials([usernamePassword(credentialsId: 'sameh-gihub-cred', usernameVariable: 'USER', passwordVariable: 'PASS')])  //credentials
                sh 'git remote set-url origin https://${USER}:${PASS}@github.com/samehpalas/Jenkins.git'  //pushing to remote repo
                sh 'git config user.name "jenkins"'  // Set the Git user information that will push
