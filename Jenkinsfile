@@ -43,7 +43,7 @@ pipeline {
         stage('deploy') { 
             steps {
                 script {
-                         gv.deployAPP()
+                         gv.deployAPP()   //call this function from external groovy script
             }
          }
         }
