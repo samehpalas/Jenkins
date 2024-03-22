@@ -5,6 +5,7 @@ pipeline {
         maven 'Maven'
     }
     stages {
+        // for generating new image version everytime running the pipeline
         stage ('incremental version') {
          steps {
              script{
