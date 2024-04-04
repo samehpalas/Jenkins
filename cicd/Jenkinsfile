@@ -55,7 +55,7 @@ pipeline {
                sh 'git config user.email "jenkins@example.com"'
                sh 'git add .'
                sh 'git commit -m "ci : version commit bump "'
-               sh 'git push origin HEAD:main'
+               sh 'git push https://samehpalas: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@github.com/samehpalas/argo-cd.git HEAD:main'
               } 
             }
         }
