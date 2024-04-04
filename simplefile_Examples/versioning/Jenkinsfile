@@ -29,7 +29,7 @@ pipeline {
                  {
                    sh " docker build -t $imagename simplefile_Examples/versioning/ "  //where docker_file located
                    sh " echo $PASS | docker login -u $USER --password-stdin "
-                   sh " docker push $imagename "
+                   sh " docker push $imagename "  // such as : samehpalas/test
             }
             }
         }
