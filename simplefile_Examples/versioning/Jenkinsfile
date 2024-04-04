@@ -44,8 +44,8 @@ pipeline {
               script {  //to increase versionng on github, not just local
                withCredentials([usernamePassword(credentialsId: 'sameh-github-cred', usernameVariable: 'USER', passwordVariable: 'PASS')]){  //credentials
                 sh 'git remote set-url origin https://${USER}:${PASS}@github.com/samehpalas/Jenkins.git'  //pushing to remote repo
-                sh 'git config user.name "jenkins"'  // Set the Git user information that will push
-                sh 'git config user.email "jenkins@example.com"'
+                sh 'git config user.name "sameh"'  // Set the Git user information that will push
+                sh 'git config user.email "samehpalas33@gmail.com"'
                 sh 'git add .'
                 sh "git commit -m 'ci: version commit bump ' "
                 sh 'git push origin HEAD:main'
