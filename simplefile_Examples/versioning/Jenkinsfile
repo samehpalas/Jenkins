@@ -53,5 +53,24 @@ pipeline {
             }
         }
     }
+        def call() {
+    node {
+    def stdout
+    timestamps {
+        ansiColor('xterm') {
+            try {
+                stdout= powershell ( 
+                               script: """
+                                  throw new Exception("ERROR: This is a test Exception.")
+                               """,
+                              resturnStdout: true)
+
+            } catch (error) {
+                println("status code ${stdout}")
+            }
+        }
+    }
+}
+}
 }
 }
